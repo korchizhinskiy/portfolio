@@ -1,0 +1,8 @@
+# Rename this file to *.ini (config.ini) and set your own values.
+
+
+[database]
+user = postgres
+password = postgres
+database = postgres
+host = localhost
