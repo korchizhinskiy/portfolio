@@ -8,8 +8,7 @@ class BlogNew(models.Model):
     category = models.ForeignKey(
             to='NewCategory', 
             on_delete=models.PROTECT, 
-            verbose_name='Категория'
-            )
+            verbose_name='Категория')
     create_date = models.DateTimeField(verbose_name='Дата создания', 
                                        auto_now_add=True)
     upgrade_date = models.DateTimeField(verbose_name='Дата обновления', 
@@ -27,8 +26,10 @@ class BlogNew(models.Model):
 
 class NewCategory(models.Model):
     """Model of new category."""
-    category_name = models.CharField(verbose_name='Категория', max_length=255,
-                                     unique=True)
+    category_name = models.CharField(
+            verbose_name='Категория', 
+            max_length=255, 
+            unique=True)
 
     def __str__(self):
         return self.category_name
