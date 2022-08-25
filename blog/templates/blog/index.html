@@ -1,16 +1,34 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'blog/blog_page.css' %}">
   <title></title>
 </head>
 <body>
   
-  <div>
-    <h1>Hello, World!</h1>
-    {% for new in news %}
-    <div>{{ new.title }}</div>
-    {% endfor %}
+
+<div class="navbar">
+  <div class="navbar_item">
+    <a href="{% url 'home' %}">Главная</a>
   </div>
+  <div class="navbar_item">
+    <a href="#">Блог</a>
+  </div>
+  <div class="navbar_item">
+    <a href="#">Контакты</a>
+  </div>
+</div>
+
+<section>
+  {% for item in blog %}
+  <div class="content_item">
+    <p class="content_item_title">{{ item.title }}</p>
+    <p class="content_item_content">{{ item.content }}</p>
+  </div>
+  {% endfor %}
+</section>
+
 </body>
 </html>
