@@ -22,8 +22,8 @@ class BlogNew(models.Model):
 
     def get_absolute_url(self):
         """Set url from variables."""
-        return reverse("new", kwargs={'pk': self.pk})
-
+        return reverse('blog_new', kwargs={'pk': self.pk})
+    
     class Meta:
         """Meta class of BlogNew Model"""
         verbose_name = 'Публикация'
