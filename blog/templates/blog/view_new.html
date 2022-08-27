@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'blog/blog_page.css' %}">
+  <title>{{ blog_new.title }}</title>
+</head>
+<body>
+  
+
+<div class="navbar">
+  <div class="navbar_item">
+    <a href="{% url 'home' %}">Главная</a>
+  </div>
+  <div class="navbar_item">
+    <a href="#">Блог</a>
+  </div>
+  <div class="navbar_item">
+    <a href="#">Контакты</a>
+  </div>
+</div>
+<section>
+  <div class="content_item">
+    <p class="content_item_title">{{ blog_new.title }}</p>
+    <p class="content_item_content">{{ blog_new.content}}</p>
+    <p>{{ blog_new.category.category_name }} </br> {{ blog_new.create_date}}</p>
+  </div>
+</section>
+
+</body>
+</html>
