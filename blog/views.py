@@ -1,8 +1,8 @@
-from django.shortcuts import render
-from django.views.generic import ListView
+import logging
+from django.views.generic import ListView, DetailView
 from .models import BlogNew
-from blog.services import get_all_from_database
 
+logger = logging.getLogger(__name__)
 
 class BlogPage(ListView):
     """Blog Page View with all news."""
@@ -18,3 +18,13 @@ class BlogPage(ListView):
     def get_queryset(self):
         """Return filtered query set."""
         return BlogNew.objects.filter(is_published=True)
+
+
+class ViewNew(DetailView):
+    model = BlogNew
+    template_name: str = 'blog/view_new.html'
+    context_object_name = 'blog_new'
+
+
+
+
