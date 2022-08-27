@@ -25,7 +25,8 @@
   {% for item in blog %}
   <div class="content_item">
     <p class="content_item_title">{{ item.title }}</p>
-    <p class="content_item_content">{{ item.content }}</p>
+    <p class="content_item_content">{{ item.content|truncatewords:100 }}</p>
+    <a class="content_item_button" href="{{item.get_absolute_url}}">Читать</a>
   </div>
   {% endfor %}
 </section>
