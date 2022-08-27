@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="{% static 'blog/blog_page.css' %}">
-  <title></title>
+  <title>{{ category.title }}</title>
 </head>
 <body>
   
@@ -21,12 +21,26 @@
   </div>
 </div>
 
+<div class="category_navbar">
+  <ul>
+  {% for item in categories %}
+  <li><a class="category_navbar_item" href="{{ item.get_absolute_url }}">{{ item }}</a></li>
+  {% endfor %}
+  </ul>
+  
+</div>
+
 <section>
   {% for item in blog %}
   <div class="content_item">
-    <p class="content_item_title">{{ item.title }}</p>
-    <p class="content_item_content">{{ item.content|truncatewords:100 }}</p>
+    <div class="content_item_wrapper">
+      <p class="content_item_title">{{ item.title }}</p>
+      <p class="content_item_content">{{ item.content|truncatewords:100 }}</p>
+    </div>
+    <p class="content_item_category"><i>{{ item.category.category_name }}</i></p>
+    <p class="content_item_date"><b>{{ item.upgrade_date }}</b></p>
     <a class="content_item_button" href="{{item.get_absolute_url}}">Читать</a>
+    
   </div>
   {% endfor %}
 </section>
