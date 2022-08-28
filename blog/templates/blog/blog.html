@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title%}
+korchizhinskiy | Блог
+{% endblock %}
+
+{% block categories %}
+{% include 'inc/_category_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+<section>
+  {% for item in blog %}
+  <div class="content_item">
+    <div class="content_item_wrapper">
+      <p class="content_item_title">{{ item.title }}</p>
+      <p class="content_item_content">{{ item.content|truncatewords:100 }}</p>
+    </div>
+    <p class="content_item_category"><i>{{ item.category.category_name }}</i></p>
+    <p class="content_item_date"><b>{{ item.upgrade_date }}</b></p>
+    <a class="content_item_button" href="{{item.get_absolute_url}}">Читать</a>
+    
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}
+
