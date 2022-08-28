@@ -1,35 +1,10 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="{% static 'blog/blog_page.css' %}">
-  <title>{{ category.title }}</title>
-</head>
-<body>
-  
+{% extends 'base.html' %}
 
-<div class="navbar">
-  <div class="navbar_item">
-    <a href="#">Главная</a>
-  </div>
-  <div class="navbar_item">
-    <a href="{% url 'blog' %}">Блог</a>
-  </div>
-  <div class="navbar_item">
-    <a href="#">Контакты</a>
-  </div>
-</div>
+{% block title %}
+korchizhinskiy | Главная страница
+{% endblock %}
 
-<div class="category_navbar">
-  <ul>
-  {% for item in categories %}
-  <li><a class="category_navbar_item" href="{{ item.get_absolute_url }}">{{ item }}</a></li>
-  {% endfor %}
-  </ul>
-  
-</div>
-
+{% block content %}
 <section>
   {% for item in blog %}
   <div class="content_item">
@@ -44,6 +19,5 @@
   </div>
   {% endfor %}
 </section>
+{% endblock %}
 
-</body>
-</html>
