@@ -1,23 +1,41 @@
 {% extends 'base.html' %}
+{% load static %}
 
-{% block title %}
-korchizhinskiy | Главная страница
+
+{% block loading_static %}
+ {{ block.super }}
+  <link rel="stylesheet" href="{% static 'blog/css/index.css' %}">
 {% endblock %}
-
 {% block content %}
-<section>
-  {% for item in blog %}
-  <div class="content_item">
-    <div class="content_item_wrapper">
-      <p class="content_item_title">{{ item.title }}</p>
-      <p class="content_item_content">{{ item.content|truncatewords:100 }}</p>
-    </div>
-    <p class="content_item_category"><i>{{ item.category.category_name }}</i></p>
-    <p class="content_item_date"><b>{{ item.upgrade_date }}</b></p>
-    <a class="content_item_button" href="{{item.get_absolute_url}}">Читать</a>
-    
-  </div>
-  {% endfor %}
-</section>
-{% endblock %}
 
+
+<div class="container">
+  <section class="main_page">
+      <div class="content">
+        <div class="content_logo">
+          <img src="/static/blog/img/logo.svg" alt="logo">
+        </div>
+        <div class="content_wrapper">
+          <div class="content_offer">
+              <div class="content_offer__main">
+                Junior Python<br>backend developer
+              </div>
+              <div class="content_offer_submain">
+                I will embody your ideas
+              </div>
+          </div>
+          <div class="content_button">
+            <div class="content_button_link">
+              <a href="#">Связаться</a>
+              <p class="content_button__info">
+                Заполнить форму или написать в соцсетях
+            </p>
+
+            </div>
+          </div>
+        </div>
+    
+      </div>
+  </section>
+</div>
+{% endblock %}
