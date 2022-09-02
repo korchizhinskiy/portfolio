@@ -1,0 +1,31 @@
+body {
+  background-image: url('/static/blog/img/first_page.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.main_page {
+}
+.content {
+}
+.content_logo {
+}
+.content_offer {
+    color: white;
+}
+.content_offer__main {
+}
+.content_offer_submain {
+}
+.content_button {
+}
+.content_button_link {
+}
+.content_button__info {
+}
