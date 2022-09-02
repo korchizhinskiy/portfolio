@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
+  background-image: url('/static/blog/img/first_page.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.main_page {
+}
+
+.content {
+}
+
+.content_wrapper {
+    display: flex;
+    align-self: end;
+}
+
+.content_logo {
+    margin-top: 50px;
+}
+
+.content_logo img {
+    width: 30%;
+}
+
+.content_offer {
+    color: white;
+    margin-top: 220px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+.content_offer__main {
+    font-size: 2.2em;
+}
+
+.content_offer_submain {
+    margin-top: 120px;
+    font-size: 1.6em;
+    font-weight: 400;
+}
+
+.content_button {
+    display: flex;
+    align-self: flex-end;
+}
+
+.content_button_link {
+    padding-bottom: 50px;
+    margin-left: 200px;
+}
+.content_button_link > a {
+    padding: 25px 50px;
+    background-color: #3A58A5;
+    border-radius: 45px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+
+
+.content_button__info {
+    margin-top: 30px;
+    color: white;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
