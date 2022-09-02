@@ -1,8 +1,11 @@
-{% extends 'base.html' %}
+{% extends 'base_blog.html' %}
 
-{% block title%}
-korchizhinskiy | Блог
+{% load static %}
+{% block loading_static %}
+{{ block.super }}
 {% endblock %}
+
+{% block page_title %}<title>korchizhinskiy | Блог</title>{% endblock %}
 
 {% block categories %}
 {% include 'inc/_category_sidebar.html' %}
@@ -17,7 +20,7 @@ korchizhinskiy | Блог
       <p class="content_item_content">{{ item.content|truncatewords:100 }}</p>
     </div>
     <p class="content_item_category"><i>{{ item.category.category_name }}</i></p>
-    <p class="content_item_date"><b>{{ item.upgrade_date }}</b></p>
+    <p class="content_item_date"><b>{{ item.create_date }}</b></p>
     <a class="content_item_button" href="{{item.get_absolute_url}}">Читать</a>
     
   </div>
