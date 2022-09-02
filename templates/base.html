@@ -1,28 +1,36 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" href="{% static 'blog/blog_page.css' %}">
-  <title>{% block title%}korchizhinskiy{% endblock %}</title>
+
+  {% load static %}
+  {% block loading_static %}
+  <link rel="stylesheet" href="{% static 'blog/css/base_page.css' %}">
+  {% endblock %}
+
+  {% block page_title %}<title>Korchizhinskiy</title>{% endblock %}
 </head>
 <body>
-  
-<div class="navbar">
-  <div class="navbar_item">
-    <a href="{% url 'home' %}">Главная</a>
-  </div>
-  <div class="navbar_item">
-    <a href="{% url 'blog' %}">Блог</a>
-  </div>
-  <div class="navbar_item">
-    <a href="#">Контакты</a>
-  </div>
-</div>
-{% block categories %}
-{% endblock %}
 
-{% block content %}
-{% endblock %}
+  {% block navigation %}
+    <div class="navbar">
+      <div class="navbar_item">
+        <a href="{% url 'home' %}">Главная</a>
+      </div>
+      <div class="navbar_item">
+        <a href="{% url 'blog' %}">Блог</a>
+      </div>
+      <div class="navbar_item">
+        <a href="#">Контакты</a>
+      </div>
+    </div>
+  {% endblock %}
+
+  {% block categories %}
+  {% endblock %}
+
+  {% block content %}
+  {% endblock %}
+
 </body>
 </html>
