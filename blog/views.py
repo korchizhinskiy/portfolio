@@ -1,6 +1,6 @@
 import logging
 from django.http.response import Http404
-from django.views.generic import CreateView, ListView, DetailView
+from django.views.generic import ListView, DetailView
 from django.shortcuts import render
 from .models import BlogNew, NewCategory
 
@@ -26,7 +26,7 @@ class BlogPage(ListView):
 
     def get_queryset(self):
         """Return filtered query set."""
-        return BlogNew.objects.filter(is_published=True).select_related('category')
+        return BlogNew.objects.order_by('-create_date').filter(is_published=True).select_related('category')
 
 class BlogPageOneOfCategory(ListView):
     """BlogPage View with all news for one of them category."""
@@ -45,7 +45,6 @@ class BlogPageOneOfCategory(ListView):
 
     def get_queryset(self):
         """Return filtered query set."""
-        logger.info(f"{self.kwargs}")
         return BlogNew.objects.filter(category_id=self.kwargs['pk'], 
                                       is_published=True).select_related('category')
 
