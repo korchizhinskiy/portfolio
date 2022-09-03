@@ -1,7 +1,9 @@
 import logging
 from django.http.response import Http404
 from django.views.generic import ListView, DetailView
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect, render
+
+from blog.forms import AddNewForm
 from .models import BlogNew, NewCategory
 
 logger = logging.getLogger(__name__)
@@ -9,7 +11,26 @@ logger = logging.getLogger(__name__)
 
 def home_page(request):
     """View home page."""
-    return render(request, 'blog/index.html')
+    if request.method == "POST":
+        form = AddNewForm(request.POST)
+        if form.is_valid():
+            news = form.save()
+            return redirect(news)
+    else:
+        form = AddNewForm()
+    return render(request, 'blog/index.html', {'form': form})
+
+def add_new(request):
+    """View form for adding new by customer."""
+    if request.method == "POST":
+        form = AddNewForm(request.POST)
+        if form.is_valid():
+            news = form.save()
+            return redirect(news)
+    else:
+        form = AddNewForm()
+    return render(request, 'blog/index.html', {'form': form})
+        
 
 
 class BlogPage(ListView):
@@ -53,6 +74,14 @@ class ViewNew(DetailView):
     model = BlogNew
     template_name: str = 'blog/view_new.html'
     context_object_name = 'blog_new'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        if not context['blog_new'].is_published:
+            raise Http404('Статья не опубликована')
+        return context
+
+
 
 
 
