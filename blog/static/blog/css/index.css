@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 body {
-  background-image: url('/static/blog/img/first_page.png');
-  background-size: cover;
-  background-repeat: no-repeat;
   margin: 0;
   padding: 0;
+}
+
+.first_page {
+    min-height: 100vh;
+    background-image: url('/static/blog/img/first_page.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+
 }
 
 .container {
