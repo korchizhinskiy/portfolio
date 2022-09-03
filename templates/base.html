@@ -12,24 +12,25 @@
 </head>
 <body>
 
-  {% block navigation %}
-    <div class="navbar">
-      <div class="navbar_item">
-        <a href="{% url 'home' %}">Главная</a>
-      </div>
-      <div class="navbar_item">
-        <a href="{% url 'blog' %}">Блог</a>
-      </div>
-      <div class="navbar_item">
-        <a href="#">Контакты</a>
-      </div>
-    </div>
-  {% endblock %}
 
-  {% block categories %}
-  {% endblock %}
 
   {% block content %}
+    {% block navigation %}
+      <div class="navbar">
+        <div class="navbar_item">
+          <a href="{% url 'home' %}">Главная</a>
+        </div>
+        <div class="navbar_item">
+          <a href="{% url 'blog' %}">Блог</a>
+        </div>
+        <div class="navbar_item">
+          <a href="#">Контакты</a>
+        </div>
+      </div>
+    {% endblock %}
+
+    {% block categories %}
+    {% endblock %}
   {% endblock %}
 
 </body>
