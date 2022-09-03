@@ -7,12 +7,17 @@
 {% endblock %}
 
 {% block content %}
+  {% block navigation %}
+    {{ block.super }} 
+  {% endblock %}
 <section>
   <div class="content_item">
-    <p class="content_item_title">{{ blog_new.title }}</p>
-    <p class="content_item_content">{{ blog_new.content}}</p>
-    <p>{{ blog_new.category.category_name }} </br> {{ blog_new.create_date}}</p>
-  </div>
+    <div class="content_item_wrapper">
+      <p class="content_item_title">{{ blog_new.title }}</p>
+      <p class="content_item_content">{{ blog_new.content|truncatewords:100 }}</p>
+    </div>
+    <p class="content_item_category"><i>{{ blog_new.category.category_name }}</i></p>
+    <p class="content_item_date"><b>{{ blog_new.create_date }}</b></p>
 </section>
 {% endblock %}
 
