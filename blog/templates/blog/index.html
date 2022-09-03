@@ -6,36 +6,48 @@
  {{ block.super }}
   <link rel="stylesheet" href="{% static 'blog/css/index.css' %}">
 {% endblock %}
+
+
 {% block content %}
+<div class="first_page"> 
 
+{% block navigation %}
+  {{ block.super }}
+{% endblock%}
 
-<div class="container">
-  <section class="main_page">
-      <div class="content">
-        <div class="content_logo">
-          <img src="/static/blog/img/logo.svg" alt="logo">
-        </div>
-        <div class="content_wrapper">
-          <div class="content_offer">
-              <div class="content_offer__main">
-                Junior Python<br>backend developer
-              </div>
-              <div class="content_offer_submain">
-                I will embody your ideas
-              </div>
+  <div class="container">
+    <section class="main_page">
+        <div class="content">
+          <div class="content_logo">
+            <img src="/static/blog/img/logo.svg" alt="logo">
           </div>
-          <div class="content_button">
-            <div class="content_button_link">
-              <a href="#">Связаться</a>
-              <p class="content_button__info">
-                Заполнить форму или написать в соцсетях
-            </p>
-
+          <div class="content_wrapper">
+            <div class="content_offer">
+                <div class="content_offer__main">
+                  Junior Python<br>backend developer
+                </div>
+                <div class="content_offer_submain">
+                  I will embody your ideas
+                </div>
+            </div>
+            <div class="content_button">
+              <div class="content_button_link">
+                <a href="#">Связаться</a>
+                <p class="content_button__info">
+                  Заполнить форму или написать в соцсетях
+              </p>
+              </div>
             </div>
           </div>
+      
         </div>
-    
-      </div>
-  </section>
+    </section>
+  </div>
 </div>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Добавить новость</button>
+</form>
 {% endblock %}
