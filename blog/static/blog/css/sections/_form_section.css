@@ -1,5 +1,7 @@
 .form_section {
     padding-top: 50px;
+    margin: 0 auto;
+    min-height: 60vh;
 }
 
 .form__section_title {
@@ -9,14 +11,42 @@
     font-size: 40px;
 }
 
+.container > form {
+    margin: 0 auto;
+    width: 40%;
+}
+
 .form_item {
     color: white;
     margin-bottom: 20px;
     width: 160px;
 }
 
+.form_item > input, textarea, select {
+    background: #333333;
+    border-radius: 10px;
+    border: none;
+}
+
+.form_item textarea:focus, input:focus, select:focus{
+    border-radius: 10px;
+    outline: none;
+    outline: #2b2726 4px solid;
+    color: wheat;
+}
+
 .form_item > label {
     margin-right: 50px;
     padding-bottom: 5px;
     display: block;
+}
+
+.form_button {
+    display: block;
+    margin: 0 auto;
+    background: rgb(59, 31, 31);
+    border: none;
+    padding: 7px 25px;
+    color: white;
+    border-radius: 20px;
 }
