@@ -7,15 +7,20 @@
     <div class="container">
         <form method="post">
         {% csrf_token %}
+
         {% for item in form %}
+          <! Delete is_published_field>
+        {% if item.label != 'Опубликовано' %} 
         <div class="form_item">
             <label for="{{ item.id_for_label }}">
                 {{ item.label }}:
             </label>
-           {{ item }}
+        {{ item }}
         </div>  
+        {% endif %}
         {% endfor %}
-        <button type="submit">Добавить новость</button>
+        
+        <button class="form_button" type="submit">Предложить новость</button>
         </form>
     </div>
 </section>
