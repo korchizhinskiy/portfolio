@@ -1,84 +1,73 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 body {
-  margin: 0;
-  padding: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.first_page {
-    min-height: 100vh;
-    background-image: url('/static/blog/img/first_page.png');
-    background-size: cover;
-    background-repeat: no-repeat;
 
+.first-page {
+    background-image: url('/static/blog/img/first_page.png');
+    background-size: auto ;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+.first-page > .container {
+    display: flex;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
-.main_page {
+.offer,
+.logo {
+    padding-left: 100px;
 }
 
-.content {
+.logo {
+    padding-top: 80px;
 }
 
-.content_wrapper {
-    display: flex;
-    align-self: end;
-}
-
-.content_logo {
-    margin-top: 50px;
-}
-
-.content_logo img {
-    width: 30%;
-}
-
-.content_offer {
+.offer {
     color: white;
-    margin-top: 220px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    padding-top: 170px;
 }
 
-.content_offer__main {
-    font-size: 2.2em;
+.offer__main-text {
+    font-weight: 700;
+    font-size: 2em;
 }
 
-.content_offer_submain {
-    margin-top: 120px;
-    font-size: 1.6em;
-    font-weight: 400;
+.offer__subtext {
+    font-weight: 300;
+    font-size: 1.5em;
+    padding-top: 50px;
 }
 
-.content_button {
-    display: flex;
+.button {
     align-self: flex-end;
+    padding-left: 250px;
+
 }
 
-.content_button_link {
-    padding-bottom: 50px;
-    margin-left: 200px;
-}
-.content_button_link > a {
-    padding: 25px 50px;
-    background-color: #3A58A5;
-    border-radius: 45px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 25px;
-    color: white;
+.button__link {
     text-decoration: none;
+    color: white;
+    font-size: 30px;
+    background: rgb(17, 120, 189);
+    border-radius: 50px;
+    padding: 7px 30px;
 }
 
-
-.content_button__info {
-    margin-top: 30px;
+.button__subtext {
+    margin-top: 10px;
     color: white;
-    font-size: 12px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
+    font-size: 13px;
+}
+
+/* Second section */
+
+.form_section {
+    background-color: #151515;
 }
