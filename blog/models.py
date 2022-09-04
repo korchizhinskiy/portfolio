@@ -15,7 +15,7 @@ class BlogNew(models.Model):
     upgrade_date = models.DateTimeField(verbose_name='Дата обновления', 
                                         auto_now=True,)
     is_published = models.BooleanField(verbose_name='Опубликовано', 
-                                       default=True)
+                                       default=False)
 
     def __str__(self):
         return self.title 
