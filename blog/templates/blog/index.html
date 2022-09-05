@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="{% static 'blog/css/index.css' %}">
   <!-- Sections -->
   <link rel="stylesheet" href="{% static 'blog/css/sections/_form_section.css' %}">
+  <link rel="stylesheet" href="{% static 'blog/css/sections/_skills_section.css' %}">
+  <link rel="stylesheet" href="{% static 'blog/css/sections/_footnote.css' %}">
+  <link rel="stylesheet" href="{% static 'blog/css/sections/_footer_section.css' %}">
 {% endblock %}
 
 
@@ -20,5 +23,8 @@
   </div>
 
   {% include 'blog/inc/section_templates/_form_section.html' %}
-
+  {% include 'blog/inc/section_templates/_skills_section.html' %}
+  {% include 'blog/inc/section_templates/_footnote.html' %}
+  {% include 'blog/inc/section_templates/_footer_section.html' %}
+ 
 {% endblock %}
