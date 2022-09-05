@@ -1,0 +1,28 @@
+.footnote {
+    padding-top: 300px;
+    background: #151515;
+    color: white;
+    font-weight: 700;
+    font-size: 50px;
+}
+.footnote__wrapper {
+    background: linear-gradient(180.01deg, #3A58A5 -82.55%, #48577E 163.92%);
+    max-width: 1400px;
+    height: 280px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.footnote__text {
+    display: inline-block;
+}
+
+.footnote__text_link {
+    margin-left: 10px;
+    color: #ff0000;
+    font-weight: 900;
+}
+

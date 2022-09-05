@@ -1,0 +1,40 @@
+.footnote {
+    padding-top: 300px;
+    background: #151515;
+    color: white;
+    font-weight: 700;
+    font-size: 50px;
+    padding-bottom: 300px;
+}
+.footnote__wrapper {
+    background: linear-gradient(180.01deg, #3A58A5 -82.55%, #48577E 163.92%);
+    max-width: 1200px;
+    margin: 0 0 0 auto;
+    height: 280px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    box-shadow: 0px 0px 43px 0px #425891;
+
+
+}
+
+.footnote__text {
+    display: inline-block;
+}
+
+.footnote__text_click > img{
+    display: inline;
+    height: 50px;
+    width: 50px;
+}
+
+.footnote__text_link {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #ff0000;
+    font-weight: 900;
+}
+

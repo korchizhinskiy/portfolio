@@ -1,0 +1,53 @@
+.skill_section {
+    background-color: #151515;
+    color: white;
+}
+
+.hard_skills {
+    display: flex;
+}
+
+.sidebar {
+    writing-mode: vertical-lr;
+    background: #48577E;
+    height: 400px;
+    padding: 0 25px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.skills__card {
+    background: linear-gradient(180.05deg, #151517 0.04%, rgba(96, 96, 98, 0) 163.85%);
+    box-shadow: 0px 0px 43px 0px #FFFFFF40;
+    max-width: 1000px;
+    border-radius: 30px;
+    margin: 0 auto;
+    font-size: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 50px;
+}
+
+.skill__card_item {
+    margin-right: 40px;
+    font-weight: 700;
+}
+
+.left {
+    border-radius: 0 50px 50px 0;
+}
+
+.right {
+    border-radius: 50px 0px 0px 50px;
+}
+
+/* SOFT SKILLS */
+.soft_skills {
+    margin-top: 150px;
+}
+
+.soft_skills {
+    display: flex;
+}
